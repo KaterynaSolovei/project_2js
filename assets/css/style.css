@@ -3,21 +3,25 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/*
+essential styles:
+these make the slideshow work
+*/
+
 .slides {
   position: relative;
   height: 150px;
   padding: 0px;
-  margin: 0;
+  margin: 0px;
   list-style-type: none;
 }
 
 .slide {
   position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
   opacity: 0;
   z-index: 1;
   transition: opacity 0.25s;
@@ -25,7 +29,48 @@ body {
 
 .active {
   opacity: 1;
-  z-index: 0;
+  z-index: 2;
+}
+
+/*
+non-essential styles:
+just for appearance; change whatever you want
+*/
+
+.slide {
+  font-size: 40px;
+  padding: 40px;
+  box-sizing: border-box;
+  background: #333;
+  color: #fff;
+}
+
+.slide:nth-of-type(1) {
+  background: red;
+}
+
+.slide:nth-of-type(2) {
+  background: orange;
+}
+
+.slide:nth-of-type(3) {
+  background: green;
+}
+
+.slide:nth-of-type(4) {
+  background: blue;
+}
+
+.slide:nth-of-type(5) {
+  background: purple;
+}
+
+/*
+
+
+
+.carousel {
+  margin-bottom: 20px;
 }
 
 .slide:nth-of-type(1) {
@@ -47,6 +92,7 @@ body {
 .slide:nth-of-type(5) {
   background-color: purple;
 }
+
 .indicator,
 .control {
   padding: 0.25em 0.5em;
@@ -62,20 +108,20 @@ body {
   border: 2px solid #908686;
   font-size: 24px;
 }
+
+.indicators,
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
 .indicator.active,
 .indicator:active,
 .control:active {
   background-color: tomato;
   color: white;
   border-color: darkred;
-}
-.indicators,
-.controls {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.slides {
-  margin-bottom: 20px;
+  border-color: transparent;
 }
